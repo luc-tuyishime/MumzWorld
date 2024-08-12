@@ -1,10 +1,10 @@
 {
   "expo": {
     "name": "MumzWorld",
-    "slug": "MumzWorld",
+    "slug": "mumzworld",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logo.png",
+    "icon": "./assets/splash.svg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/logo.png",
@@ -31,8 +31,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "112202b3-1f26-4a6d-a3ac-fc441a0705ce"
+        "projectId": "96bd6064-a206-42d6-9d7b-7042fc933695"
       }
-    }
+    },
+    "owner": "luctunechi"
   }
 }
