@@ -4,7 +4,7 @@
     "strict": true,
     "jsx": "react",
     "typeRoots": ["./node_modules/@types", "./types"],
-    "types": ["nativewind/types", "jest", "react-native", "node"]
+    "types": ["nativewind/types", "jest", "react-native", "node", "redux-mock-store",  "redux-thunk"]
 
   },
   "include": ["src/**/*"],

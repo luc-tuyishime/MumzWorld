@@ -21,28 +21,32 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({ onSearch }) => {
                 <View className="flex-1 flex-row items-center">
                     <TextInput
                         className="flex-1 h-10 px-4 mr-2 border border-mumz-pink rounded-full"
-                        placeholder="Search by name or price"
+                        placeholder="Search Mumzworld.ae"
                         value={searchTerm}
                         onChangeText={handleSearchChange}
+                        testID="search-input"
                     />
-                    <TouchableOpacity onPress={() => {
-                        setIsSearchVisible(false);
-                        setSearchTerm('');
-                        onSearch('');
-                    }}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            setIsSearchVisible(false);
+                            setSearchTerm('');
+                            onSearch('');
+                        }}
+                        testID="close-search"
+                    >
                         <Ionicons name="close" size={24} color="#ED1971" />
                     </TouchableOpacity>
                 </View>
             ) : (
                 <View className="flex-1 flex-row justify-between items-center">
-                    <TouchableOpacity onPress={() => setIsSearchVisible(true)}>
+                    <TouchableOpacity onPress={() => setIsSearchVisible(true)} testID="search-icon">
                         <Ionicons name="search" size={24} color="#ED1971" />
                     </TouchableOpacity>
                     <View className="flex-row items-center">
-                        <TouchableOpacity className="mr-4">
+                        <TouchableOpacity className="mr-4" testID="heart-icon">
                             <Ionicons name="heart-outline" size={24} color="#ED1971" />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity testID="cart-icon">
                             <Ionicons name="cart-outline" size={24} color="#ED1971" />
                         </TouchableOpacity>
                     </View>

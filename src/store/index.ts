@@ -9,10 +9,12 @@ import {
 } from 'redux-persist';
 import productReducer from './productSlice';
 
+
 export const store = configureStore({
     reducer: {
         products: productReducer,
     },
+    // @ts-ignore
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '../store/productSlice';
 import { RootState, AppDispatch } from '../store';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Product } from '../types';
+import { sortProducts } from '../utils/productSorting';
 import CustomHeader from '../components/CustomHeader';
 import ProductCard from '../components/ProductCard';
 
@@ -23,58 +23,36 @@ const ProductListScreen: React.FC<ProductListScreenProps> = ({ navigation }) => 
     const dispatch = useDispatch<AppDispatch>();
     const { byId, allIds, status, error } = useSelector((state: RootState) => state.products);
     const [filteredAndSortedIds, setFilteredAndSortedIds] = useState<number[]>([]);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchProduct, setSearchProduct] = useState('');
 
     useEffect(() => {
         if (status === 'idle') {
-            dispatch(fetchProducts());
+            dispatch(fetchProducts() as any);
         }
     }, [status, dispatch]);
 
     const handleSearch = useCallback((term: string) => {
-        setSearchTerm(term);
+        setSearchProduct(term);
     }, []);
 
+
     useEffect(() => {
-        const lowercasedTerm = searchTerm.toLowerCase();
+        const lowercasedTerm = searchProduct.toLowerCase();
         const filtered = allIds.filter(id => {
             const product = byId[id];
             return (
                 product.name.toLowerCase().includes(lowercasedTerm) ||
-                product.price.toString().includes(lowercasedTerm)
+                product.price.toString().includes(lowercasedTerm) ||
+                product.brand.toLowerCase().includes(lowercasedTerm) ||
+                product.sku.toLowerCase().includes(lowercasedTerm) ||
+                product.url_key.toLowerCase().includes(lowercasedTerm) ||
+                product.stock_status.toLowerCase().includes(lowercasedTerm)
             );
         });
 
-        // Sort the filtered results
-        const sorted = filtered.sort((a, b) => {
-            const productA = byId[a];
-            const productB = byId[b];
-            const nameA = productA.name.toLowerCase();
-            const nameB = productB.name.toLowerCase();
-            const priceA = productA.price.toString();
-            const priceB = productB.price.toString();
-
-            // Check for exact matches first
-            if (nameA === lowercasedTerm || priceA === lowercasedTerm) return -1;
-            if (nameB === lowercasedTerm || priceB === lowercasedTerm) return 1;
-
-            // Then check for partial matches
-            const nameMatchA = nameA.includes(lowercasedTerm);
-            const nameMatchB = nameB.includes(lowercasedTerm);
-            const priceMatchA = priceA.includes(lowercasedTerm);
-            const priceMatchB = priceB.includes(lowercasedTerm);
-
-            if (nameMatchA && !nameMatchB) return -1;
-            if (nameMatchB && !nameMatchA) return 1;
-            if (priceMatchA && !priceMatchB) return -1;
-            if (priceMatchB && !priceMatchA) return 1;
-
-            // If no difference in matching, maintain original order
-            return 0;
-        });
-
+        const sorted = sortProducts(filtered, byId, searchProduct);
         setFilteredAndSortedIds(sorted);
-    }, [searchTerm, allIds, byId]);
+    }, [searchProduct, allIds, byId]);
 
     const renderItem = ({ item: productId }: { item: number }) => {
         const product = byId[productId];

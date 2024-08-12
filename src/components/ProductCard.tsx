@@ -21,7 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, isDetailVie
             onPress={onPress}
         >
             <View className="relative">
-                {product.image ? (
+                {product?.image ? (
                     <Image
                         source={{ uri: product.image }}
                         style={{

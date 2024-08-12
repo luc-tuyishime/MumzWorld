@@ -24,7 +24,7 @@ const ProductDetailsScreen: React.FC<ProductDetailsScreenProps> = ({ route }) =>
 
     useEffect(() => {
         if (!product) {
-            dispatch(fetchProductDetails(productId));
+            dispatch(fetchProductDetails(productId) as any);
         }
     }, [dispatch, productId, product]);
 
