@@ -1,5 +1,3 @@
-// screens/ProductDetailsScreen.tsx
-
 import React, { useEffect } from 'react';
 import { View, ScrollView, TouchableOpacity, Text, ActivityIndicator, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';

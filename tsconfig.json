@@ -3,7 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "jsx": "react",
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["nativewind/types", "jest", "react-native", "node"]
+
   },
   "include": ["src/**/*"],
   "files": [

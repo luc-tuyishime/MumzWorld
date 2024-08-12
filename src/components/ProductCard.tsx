@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ActivityIndicator, Dimensions, ViewProps, TouchableOpacityProps } from 'react-native';
 import { Product } from '../types';
 
 interface ProductCardProps {
@@ -9,7 +9,8 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onPress, isDetailView = false }) => {
-    const CardContainer = isDetailView ? View : TouchableOpacity;
+    const CardContainer: React.ComponentType<any> =
+        isDetailView ? View : TouchableOpacity;
     const screenWidth = Dimensions.get('window').width;
 
     return (

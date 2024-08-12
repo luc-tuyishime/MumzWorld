@@ -1,5 +1,3 @@
-// screens/ProductListScreen.tsx
-
 import React, { useEffect, useState, useCallback } from 'react';
 import { View, FlatList, Text, Image, TouchableOpacity, ActivityIndicator, SafeAreaView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';

@@ -1,5 +1,3 @@
-// components/CustomHeader.tsx
-
 import React, { useState, useCallback } from 'react';
 import { View, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
