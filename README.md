@@ -53,9 +53,14 @@ yarn test
 
 Here is the Expo working deployment
 
-For Android users, you can download the APK file here: 
+* For Android users, you can download the APK file here: 
 
-[MumzWorld APK Url](https://drive.google.com/drive/folders/1FCDK42sPnru-Es2fQyFjIVuydoDRrgHB?usp=sharing)
+  - [MumzWorld APK Url](https://drive.google.com/drive/folders/1FCDK42sPnru-Es2fQyFjIVuydoDRrgHB?usp=sharing)
+
+* IOS
+- I couldn't deploy the app on iOS because it requires a paid Apple Developer account.
+
+
 
 ## Style Guide
 
