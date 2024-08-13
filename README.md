@@ -64,17 +64,10 @@ Here is the Expo working deployment
 
 ## Style Guide
 
-This project follows the Airbnb JavaScript Style Guide. ESLint and Prettier are configured to enforce this style guide. To run the linter, use:
+This project follows the Airbnb JavaScript Style Guide. ESLint and Prettier are configured to enforce this style guide.
 
-```
-yarn lint
-```
 
-To automatically fix linting issues:
 
-```
-yarn lint --fix
-```
 
 
 
