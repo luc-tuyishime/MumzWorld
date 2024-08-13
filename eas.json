@@ -13,8 +13,7 @@
     "production": {
       "env": {
         "EXPO_API_URL": "https://storage.googleapis.com/mumzrn"
-      },
-      "image": "latest"
+      }
     }
   },
   "submit": {

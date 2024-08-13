@@ -9,6 +9,18 @@ MumzWorld is the original, number 1, and largest destination in the Middle East 
 https://github.com/user-attachments/assets/dced0656-0a8f-4ca5-8af3-333245273fcd
 
 
+## Deployment
+
+Here is the Expo working deployment
+
+* For Android users, you can download the APK file here:
+
+    - [MumzWorld APK Url](https://drive.google.com/drive/folders/1FCDK42sPnru-Es2fQyFjIVuydoDRrgHB?usp=sharing)
+
+* IOS
+- I couldn't deploy the app on iOS because it requires a paid Apple Developer account.
+
+
 ## Technology Stack
 
 - **Language**: TypeScript
@@ -55,19 +67,6 @@ To run the tests, use the following command:
 ```
 yarn test
 ```
-
-## Deployment
-
-Here is the Expo working deployment
-
-* For Android users, you can download the APK file here:
-
-    - [MumzWorld APK Url](https://drive.google.com/drive/folders/1FCDK42sPnru-Es2fQyFjIVuydoDRrgHB?usp=sharing)
-
-* IOS
-- I couldn't deploy the app on iOS because it requires a paid Apple Developer account.
-
-
 
 ## Style Guide
 
