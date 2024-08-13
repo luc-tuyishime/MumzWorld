@@ -1,4 +1,4 @@
-# MumzWorld Mobile App
+# MumzWorld
 
 MumzWorld is the original, number 1, and largest destination in the Middle East for everything Mum, Baby, and Child. This mobile application brings the MumzWorld experience to your fingertips.
 
